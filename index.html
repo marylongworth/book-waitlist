@@ -2,115 +2,177 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Life, Death & Rotten Landlordism – Waitlist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
+    :root{
+      --bg1: #faf3e0;
+      --bg2: #e8f0ff;
+      --card-max: 900px;
+      --gutter: 1.25rem;
+    }
+
+    /* Reset-ish */
+    * { box-sizing: border-box; }
+    html,body { height: 100%; }
+
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
-      background: linear-gradient(135deg, #faf3e0, #e8f0ff);
-      color: #222;
-      text-align: center;
+      background: linear-gradient(135deg, var(--bg1), var(--bg2));
+      color: #111;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
-      animation: fadeIn 1.2s ease;
-      padding: 2rem 1rem;
+      padding: 1.5rem;
+      -webkit-font-smoothing:antialiased;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    header {
+      width: 100%;
+      max-width: var(--card-max);
+      text-align: center;
+      margin: 0 auto 1rem;
+      padding: 0 var(--gutter);
     }
 
     h1 {
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
-      display: flex;
+      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+      margin: 0;
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      transition: transform 0.3s ease;
+      gap: 0.5rem;
     }
 
-    h1 span.emoji {
-      display: inline-block;
-      font-size: 2.8rem;
-      transition: transform 0.3s ease;
+    .emoji {
+      display:inline-block;
+      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+      transition: transform .28s ease;
     }
+    h1:hover .emoji { transform: rotate(-10deg) scale(1.12); }
 
-    h1:hover span.emoji {
-      transform: rotate(-10deg) scale(1.2);
-    }
-
-    p {
-      font-size: 1.1rem;
+    p.lead {
       color: #444;
-      max-width: 650px;
-      margin: 0 auto 2rem;
-      line-height: 1.6;
+      max-width: 750px;
+      margin: .6rem auto 0;
+      line-height: 1.5;
+      padding: 0 var(--gutter);
+      font-size: clamp(.95rem, 1.6vw, 1.05rem);
     }
 
+    /* Card around the form */
     .card {
-      background: white;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      border-radius: 16px;
-      padding: 2rem;
-      max-width: 700px;
       width: 100%;
-      animation: fadeIn 1.6s ease;
+      max-width: var(--card-max);
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.12);
+      padding: 1rem;
+      margin-top: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    /* RESPONSIVE IFRAME: use viewport height units as default */
+    .form-wrapper {
+      width: 100%;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
     }
 
     iframe {
       width: 100%;
-      height: 650px;
-      border: none;
-      border-radius: 12px;
-      margin-top: 1rem;
+      height: 68vh;               
+      min-height: 420px;          
+      max-height: 900px;         
+      border: 0;
+      display: block;
+    }
+
+    /* Small phone adjustments */
+    @media (max-width: 420px) {
+      iframe { height: 62vh; min-height: 380px; }
+      .card { padding: .6rem; border-radius: 10px; }
+    }
+
+    @media (max-height: 600px) {
+      iframe { height: 60vh; }
     }
 
     footer {
-      margin-top: 2.5rem;
-      font-size: 0.9rem;
-      color: #777;
+      margin-top: 1.25rem;
+      text-align: center;
+      color: #666;
+      font-size: .9rem;
+      padding: 0 var(--gutter);
+      max-width: var(--card-max);
+      width: 100%;
     }
 
-    footer a {
-      color: #555;
-      text-decoration: none;
-      border-bottom: 1px dotted #aaa;
-    }
-
-    footer a:hover {
-      color: #000;
-    }
+    /* make sure the page can scroll if content taller than viewport */
+    main { width: 100%; flex: 1 1 auto; display:flex; align-items:flex-start; justify-content:center; }
   </style>
 </head>
-
 <body>
   <header>
     <h1><span class="emoji">📘</span> Life, Death & Rotten Landlordism</h1>
-    <p><strong>By Conall Horgan</strong> — Be the first to read <em>Life, Death & Rotten Landlordism</em>.  
-    Join the waitlist below and get exclusive updates before launch.</p>
+    <p class="lead"><strong>By Conall Horgan</strong> — Be the first to read <em>Life, Death & Rotten Landlordism</em>. Join the waitlist below and get exclusive updates before launch.</p>
   </header>
 
-  <section class="card">
-    <iframe 
-      src="https://docs.google.com/forms/d/e/1FAIpQLScpMuzUpxtWWHWfPUglLrf5nKnGnR2-V6TqMayqEl_NOh1l9w/viewform?embedded=true"
-      frameborder="0"
-      marginheight="0"
-      marginwidth="0">
-      Loading…
-    </iframe>
-  </section>
+  <main>
+    <section class="card" aria-labelledby="waitlist-heading">
+      <div class="form-wrapper">
+        <!-- Replace the src with your Google Forms embed (the /d/e/.../viewform?embedded=true URL) -->
+        <iframe id="gform"
+          src="https://docs.google.com/forms/d/e/1FAIpQLScpMuzUpxtWWHWfPUglLrf5nKnGnR2-V6TqMayqEl_NOh1l9w/viewform?embedded=true"
+          title="Life, Death & Rotten Landlordism waitlist form">
+          Loading…
+        </iframe>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>We’ll only email you about the book launch. No spam.</p>
-    <p>© 2025 Conall Horgan</p>
+    <p>We’ll only email you about the book launch. No spam. © 2025 Conall Horgan</p>
   </footer>
+
+  <!-- dynamically size the iframe to available viewport space. -->
+  <script>
+    (function(){
+      const iframe = document.getElementById('gform');
+      const header = document.querySelector('header');
+      const footer = document.querySelector('footer');
+
+      function resizeIframe(){
+        if(!iframe) return;
+        const vh = window.innerHeight; // current viewport height (mobile friendly)
+        const headerH = header ? header.getBoundingClientRect().height : 0;
+        const footerH = footer ? footer.getBoundingClientRect().height : 0;
+        const reserved = headerH + footerH + 48; // 48px of extra spacing
+        // compute available space for the iframe, bound it to sensible min/max
+        let available = Math.max(360, Math.min(900, Math.floor(vh - reserved)));
+        // If the available space is very small (keyboard open), allow a smaller min
+        if(vh < 520) available = Math.max(320, available);
+        iframe.style.height = available + 'px';
+      }
+
+      // Run on load and on resize / orientation change
+      window.addEventListener('load', resizeIframe);
+      window.addEventListener('resize', resizeIframe);
+      window.addEventListener('orientationchange', function(){
+        // wait a tick for orientation to settle on some devices
+        setTimeout(resizeIframe, 250);
+      });
+
+      // Try an initial resize immediately in case 'load' already fired
+      resizeIframe();
+    })();
+  </script>
 </body>
 </html>
