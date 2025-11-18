@@ -15,6 +15,46 @@
       --gutter: 1.25rem;
     }
 
+
+    /* Book page styling */
+.book-page {
+  max-width: 750px;
+  margin: 2rem auto;
+  background: #fdfaf4;                     /* soft paper */
+  padding: 2rem 2.25rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.08);       /* faint edge definition */
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);  /* soft natural shadow */
+  font-family: 'Georgia', serif;            /* book font feel */
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #333;
+  text-align: justify;                      /* book-style justification */
+}
+
+/* First-line indent */
+.book-page p {
+  text-indent: 1.5rem;
+  margin: 0 0 1.1rem;
+}
+
+/* Remove indent for first paragraph if desired */
+.book-page p:first-of-type {
+  text-indent: 0;
+}
+
+/* Optional subtle texture (transparent so it doesn’t overpower) */
+.book-page {
+  background-image: url('https://i.imgur.com/9J2QyNq.png'); /* faint paper texture */
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-color: #fdfaf4;
+}
+
+
+
+    
+
     /* Reset-ish */
     * { box-sizing: border-box; }
     html,body { height: 100%; }
@@ -115,15 +155,22 @@
       width: 100%;
     }
 
-    /* Author section */
+    /* Author section — subtle standout */
 .author-box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
-  margin: 1.5rem auto 2rem;
+  gap: 0.6rem;
+  
+  margin: 1.75rem auto 2.5rem;
   max-width: 650px;
-  padding: 0 var(--gutter);
+  padding: 1.25rem 1.5rem;
+
+  background: rgba(255, 255, 255, 0.55);    
+  backdrop-filter: blur(6px);               
+  border: 1px solid rgba(0, 0, 0, 0.06);    
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.07);  
 }
 
 .author-photo {
@@ -132,21 +179,23 @@
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   border: 3px solid #fff;
 }
 
 .author-name {
   font-size: 1.25rem;
   font-weight: 600;
+  margin-top: 0.25rem;
 }
 
 .author-bio {
   font-size: 1rem;
   color: #444;
   line-height: 1.55;
+  text-align: center;
+  max-width: 480px;
 }
-
 
     /* make sure the page can scroll if content taller than viewport */
     main { width: 100%; flex: 1 1 auto; display:flex; align-items:flex-start; justify-content:center; }
@@ -154,36 +203,46 @@
 </head>
 <body>
   <header>
-    <h1><span class="emoji">📘</span> Life, Death & Rotten Landlordism</h1>
+   
     <div class="author-box">
   <img src="conall-horgan-writer.jpg" alt="Photo of Conall Horgan" class="author-photo">
   <div class="author-name">Conall Horgan</div>
   <div class="author-bio">
-    Irish writer from Youghal, deeply inspired by the quiet heroism of ordinary people.  
-    <em>Life, Death & Rotten Landlordism</em> is his debut novel.
+    Irish writer  deeply inspired by the quiet heroism of ordinary people.  
   </div>
 </div>
 
     <br>
-    <p><strong><em>Elizabeth fights to keep her family alive after a sudden loss. Outside, 
-      a rent strike led by a charismatic priest is escalating 
-      into open rebellion against the Crown.</em></strong>
-    </p>
-    <p>
-      Set in Youghal, 1887, <strong>Life, Death & Rotten Landlordism</strong> echoes today’s world: extortionate rents, absentee landlords, and ordinary people pushed to the brink.
-    </p>
-    <p>At its heart, this is the story of an Irish mother under extraordinary pressure; 
-      woven through parish gossip, political uprising, heartbreak, and humour. </p>
-<p>The novel explores how extraordinary courage can be both private and public. </p>
-<p>It honours the unsung women whose quiet acts of bravery helped shape Ireland’s future.</p>
- 
- <p><strong>Sign up below to be the first to hear about the book’s release.</strong></p> 
-<p>Go raibh míle maith agat,</p>
-<p class="lead"><strong>Author: Conall Horgan</strong>
+     <h1><span class="emoji">📘</span> Life, Death & Rotten Landlordism</h1>
+       <br>
+
   
   </header>
 
   <main>
+
+    <div class="book-page">
+
+  <p><strong>Elizabeth fights to keep her family alive after a sudden loss.</strong> 
+  Outside, a rent strike led by a charismatic priest is escalating into open rebellion 
+  against the Crown.</p>
+
+  <p>Set in Youghal, 1887, <em>Life, Death & Rotten Landlordism</em> echoes today’s world:
+  extortionate rents, absentee landlords, and ordinary people pushed to the brink.</p>
+
+  <p>At its heart, this is the story of an Irish mother under extraordinary pressure; woven 
+  through parish gossip, political uprising, heartbreak, and humour.</p>
+
+  <p>The novel explores how extraordinary courage can be both private and public. 
+  It honours the unsung women whose quiet acts of bravery helped shape Ireland’s future.</p>
+
+  <p><strong>Sign up below to be the first to hear about the book’s release.</strong></p>
+
+  <p>Go raibh míle maith agat,<br>— Conall Horgan</p>
+
+</div>
+
+    
     <section class="card" aria-labelledby="waitlist-heading">
       <div class="form-wrapper">
         <iframe id="gform"
