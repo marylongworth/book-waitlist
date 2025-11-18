@@ -16,16 +16,15 @@
     }
 
 
-    .author-box {
+.author {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.6rem;
-  
-  margin: 1.75rem auto 2.5rem;
+  gap: 0.75rem;
+  margin: 1.5rem auto 2rem;
   max-width: 650px;
+  padding: 0 var(--gutter);
 }
-
 
     
 
@@ -130,7 +129,7 @@
     }
 
     /* Author section — subtle standout */
-.author-box {
+.page-box {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -145,30 +144,6 @@
   border: 1px solid rgba(0, 0, 0, 0.06);    
   border-radius: 14px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.07);  
-}
-
-.author-photo {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  border: 3px solid #fff;
-}
-
-.author-name {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-top: 0.25rem;
-}
-
-.author-bio {
-  font-size: 1rem;
-  color: #444;
-  line-height: 1.55;
-  text-align: center;
-  max-width: 480px;
 }
 
     /* make sure the page can scroll if content taller than viewport */
@@ -190,7 +165,7 @@
      <h1><span class="emoji">📘</span> Life, Death & Rotten Landlordism</h1>
        <br>
 
-      <div class="author-box">
+      <div class="page-box">
 
   <p><strong>Elizabeth fights to keep her family alive after a sudden loss.</strong> 
   Outside, a rent strike led by a charismatic priest is escalating into open rebellion 
