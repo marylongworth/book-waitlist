@@ -149,22 +149,47 @@
       width: 100%;
     }
 
-    /* Author section — subtle standout */
+/* Page-box now supports an image on the left */
 .page-box {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-  
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.5rem;
+
   margin: 1.75rem auto 2.5rem;
   max-width: 800px;
-  padding: 1.25rem 1.5rem;
+  padding: 1.5rem 1.75rem;
 
-  background: rgba(255, 255, 255, 0.55);    
-  backdrop-filter: blur(6px);               
-  border: 1px solid rgba(0, 0, 0, 0.06);    
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.07);  
+  box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+
+  line-height: 1.6;
+}
+
+/* The image on the left */
+.page-box img.page-image {
+  width: 220px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+}
+
+/* Make it stack on mobile */
+@media (max-width: 700px) {
+  .page-box {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .page-box img.page-image {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+  }
 }
 
     /* make sure the page can scroll if content taller than viewport */
@@ -186,26 +211,31 @@
      <h1><span class="emoji">📘</span> Life, Death & Rotten Landlordism</h1>
        <br>
 
-      <div class="page-box">
+<div class="page-box">
 
-  <p><strong>Elizabeth fights to keep her family alive after a sudden loss.</strong> 
-  Outside, a rent strike led by a charismatic priest is escalating into open rebellion 
-  against the Crown.</p>
+  <img src="elizabeth.jpg" alt="Book-related image" class="page-image">
 
-  <p>Set in Youghal, 1887, <em>Life, Death & Rotten Landlordism</em> echoes today’s world:
-  extortionate rents, absentee landlords, and ordinary people pushed to the brink.</p>
+  <div class="page-text">
+    <p><strong>Elizabeth fights to keep her family alive after a sudden loss.</strong> 
+    Outside, a rent strike led by a charismatic priest is escalating into open rebellion 
+    against the Crown.</p>
 
-  <p>At its heart, this is the story of an Irish mother under extraordinary pressure; woven 
-  through parish gossip, political uprising, heartbreak, and humour.</p>
+    <p>Set in Youghal, 1887, <em>Life, Death & Rotten Landlordism</em> echoes today’s world:
+    extortionate rents, absentee landlords, and ordinary people pushed to the brink.</p>
 
-  <p>The novel explores how extraordinary courage can be both private and public. 
-  It honours the unsung women whose quiet acts of bravery helped shape Ireland’s future.</p>
+    <p>At its heart, this is the story of an Irish mother under extraordinary pressure; woven 
+    through parish gossip, political uprising, heartbreak, and humour.</p>
 
-  <p><strong>Sign up below to be the first to hear about the book’s release.</strong></p>
+    <p>The novel explores how extraordinary courage can be both private and public. 
+    It honours the unsung women whose quiet acts of bravery helped shape Ireland’s future.</p>
 
-  <p>Go raibh míle maith agat,<br>— Conall Horgan</p>
+    <p><strong>Sign up below to be the first to hear about the book’s release.</strong></p>
+
+    <p>Go raibh míle maith agat,<br>— Conall Horgan</p>
+  </div>
 
 </div>
+
 
   
   </header>
