@@ -115,6 +115,39 @@
       width: 100%;
     }
 
+    /* Author section */
+.author-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.5rem auto 2rem;
+  max-width: 650px;
+  padding: 0 var(--gutter);
+}
+
+.author-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  border: 3px solid #fff;
+}
+
+.author-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.author-bio {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.55;
+}
+
+
     /* make sure the page can scroll if content taller than viewport */
     main { width: 100%; flex: 1 1 auto; display:flex; align-items:flex-start; justify-content:center; }
   </style>
@@ -122,6 +155,15 @@
 <body>
   <header>
     <h1><span class="emoji">📘</span> Life, Death & Rotten Landlordism</h1>
+    <div class="author-box">
+  <img src="conall-horgan-writer.jpg" alt="Photo of Conall Horgan" class="author-photo">
+  <div class="author-name">Conall Horgan</div>
+  <div class="author-bio">
+    Irish writer from Youghal, deeply inspired by the quiet heroism of ordinary people.  
+    <em>Life, Death & Rotten Landlordism</em> is his debut novel.
+  </div>
+</div>
+
     <br>
     <p><strong><em>Elizabeth fights to keep her family alive after a sudden loss. Outside, 
       a rent strike led by a charismatic priest is escalating 
