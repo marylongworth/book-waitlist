@@ -16,42 +16,7 @@
     }
 
 
-    /* Book page styling */
-.book-page {
-  max-width: 750px;
-  margin: 2rem auto;
-  background: #fdfaf4;                     /* soft paper */
-  padding: 2rem 2.25rem;
-  border-radius: 8px;
-  border: 1px solid rgba(0,0,0,0.08);       /* faint edge definition */
-  box-shadow: 0 8px 22px rgba(0,0,0,0.08);  /* soft natural shadow */
-  font-family: 'Georgia', serif;            /* book font feel */
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #333;
-  text-align: justify;                      /* book-style justification */
-}
-
-/* First-line indent */
-.book-page p {
-  text-indent: 1.5rem;
-  margin: 0 0 1.1rem;
-}
-
-/* Remove indent for first paragraph if desired */
-.book-page p:first-of-type {
-  text-indent: 0;
-}
-
-/* Optional subtle texture (transparent so it doesn’t overpower) */
-.book-page {
-  background-image: url('https://i.imgur.com/9J2QyNq.png'); /* faint paper texture */
-  background-size: cover;
-  background-blend-mode: multiply;
-  background-color: #fdfaf4;
-}
-
-
+    
 
     
 
@@ -204,7 +169,7 @@
 <body>
   <header>
    
-    <div class="author-box">
+    <div class="author">
   <img src="conall-horgan-writer.jpg" alt="Photo of Conall Horgan" class="author-photo">
   <div class="author-name">Conall Horgan</div>
   <div class="author-bio">
@@ -216,12 +181,7 @@
      <h1><span class="emoji">📘</span> Life, Death & Rotten Landlordism</h1>
        <br>
 
-  
-  </header>
-
-  <main>
-
-    <div class="book-page">
+      <div class="author-box">
 
   <p><strong>Elizabeth fights to keep her family alive after a sudden loss.</strong> 
   Outside, a rent strike led by a charismatic priest is escalating into open rebellion 
@@ -241,6 +201,13 @@
   <p>Go raibh míle maith agat,<br>— Conall Horgan</p>
 
 </div>
+
+  
+  </header>
+
+  <main>
+
+  
 
     
     <section class="card" aria-labelledby="waitlist-heading">
