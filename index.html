@@ -240,19 +240,29 @@ body {
   stroke-linejoin: round;
 }
 
-.antique-divider {
+
+
+.vintage-divider {
   width: 100%;
-  max-width: 350px;
-  margin: 2rem auto;
-  text-align: center;
-  font-size: 0.9rem;
-  color: rgba(0,0,0,0.6);
-  letter-spacing: 0.4rem;
+  max-width: 720px;
+  margin: 2.2rem auto;
+  border: none;
+  border-top: 1px solid rgba(0,0,0,0.55);
+  position: relative;
 }
 
-.antique-divider::before {
-  content: "• • •";
+.vintage-divider::after {
+  content: "✦";
+  position: absolute;
+  top: -0.7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  background: #fff;
+  padding: 0 .4rem;
+  color: rgba(0,0,0,0.7);
 }
+
 
 
 
@@ -314,7 +324,7 @@ body {
 
   <footer>
 
-    <div class="antique-divider"></div>
+  <div class="vintage-divider"></div>
 
     
      <div class="form-wrapper">
@@ -326,7 +336,7 @@ body {
       </div>
     <br>
 
-  <div class="antique-divider"></div>
+ <div class="vintage-divider"></div>
 
     <br>
     <div class="social-links">
