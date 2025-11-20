@@ -240,6 +240,16 @@ body {
   stroke-linejoin: round;
 }
 
+ .divider {
+  width: 100%;
+  max-width: 480px;
+  margin: 2rem auto;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  opacity: 0.6;
+}
+
+
 
     /* make sure the page can scroll if content taller than viewport */
     main { width: 100%; flex: 1 1 auto; display:flex; align-items:flex-start; justify-content:center; }
@@ -297,7 +307,9 @@ body {
   </main>
 
   <footer>
-        <br> <divider></divider>
+
+    <hr class="divider">
+    
      <div class="form-wrapper">
         <iframe id="gform"
           src="https://docs.google.com/forms/d/e/1FAIpQLScpMuzUpxtWWHWfPUglLrf5nKnGnR2-V6TqMayqEl_NOh1l9w/viewform?embedded=true"
@@ -305,6 +317,10 @@ body {
           Loading…
         </iframe>
       </div>
+    <br>
+
+    <hr class="divider">
+
     <br>
     <div class="social-links">
   <a href="https://instagram.com/conallhorgan" target="_blank" rel="noopener">
