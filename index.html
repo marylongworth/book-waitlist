@@ -249,6 +249,27 @@ body {
   opacity: 0.6;
 }
 
+    .vintage-divider {
+  width: 100%;
+  max-width: 420px;
+  margin: 2.2rem auto;
+  border: none;
+  border-top: 1px solid rgba(0,0,0,0.55);
+  position: relative;
+}
+
+.vintage-divider::after {
+  content: "✦";
+  position: absolute;
+  top: -0.7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  background: #fff;
+  padding: 0 .4rem;
+  color: rgba(0,0,0,0.7);
+}
+
 
 
     /* make sure the page can scroll if content taller than viewport */
@@ -308,7 +329,8 @@ body {
 
   <footer>
 
-    <hr class="divider">
+    <div class="vintage-divider"></div>
+
     
      <div class="form-wrapper">
         <iframe id="gform"
